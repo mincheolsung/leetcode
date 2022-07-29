@@ -26,10 +26,6 @@ int kthSmallest(struct TreeNode* root, int k){
     }
 
     inorder(root, result, &idx);
-
-    if (idx < k) {
-        return -1;
-    }
-    
+  
     return result[k-1];
 }
