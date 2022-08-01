@@ -1,4 +1,4 @@
-void dfs(int **grid, int gridSize, int *gridColSize, int i, int j, int *cnt) {
+void backtrack(int **grid, int gridSize, int *gridColSize, int i, int j, int *cnt) {
     if (i == -1 || j == -1 || i == gridSize || j == gridColSize[0]) {
         return;
     }
@@ -21,10 +21,10 @@ void dfs(int **grid, int gridSize, int *gridColSize, int i, int j, int *cnt) {
 
     grid[i][j] = -1;
 
-    dfs(grid, gridSize, gridColSize, i-1, j, cnt);
-    dfs(grid, gridSize, gridColSize, i, j-1, cnt);
-    dfs(grid, gridSize, gridColSize, i+1, j, cnt);
-    dfs(grid, gridSize, gridColSize, i, j+1, cnt);
+    backtrack(grid, gridSize, gridColSize, i-1, j, cnt);
+    backtrack(grid, gridSize, gridColSize, i, j-1, cnt);
+    backtrack(grid, gridSize, gridColSize, i+1, j, cnt);
+    backtrack(grid, gridSize, gridColSize, i, j+1, cnt);
     
     grid[i][j] = 0;
 }
@@ -34,7 +34,7 @@ int uniquePathsIII(int** grid, int gridSize, int* gridColSize){
     for (int i = 0; i < gridSize; i++) {
         for (int j = 0; j < gridColSize[0]; j++) {
             if (grid[i][j] == 1) {
-                dfs(grid, gridSize, gridColSize, i, j, &result);
+                backtrack(grid, gridSize, gridColSize, i, j, &result);
                 return result;
             }       
         }
