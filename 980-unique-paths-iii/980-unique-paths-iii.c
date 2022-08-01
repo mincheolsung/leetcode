@@ -1,4 +1,4 @@
-void dfs(int **orig, int **grid, int gridSize, int *gridColSize, int i, int j, int *cnt) {
+void dfs(int **grid, int gridSize, int *gridColSize, int i, int j, int *cnt) {
     if (i == -1 || j == -1 || i == gridSize || j == gridColSize[0]) {
         return;
     }
@@ -16,37 +16,25 @@ void dfs(int **orig, int **grid, int gridSize, int *gridColSize, int i, int j, i
             }
         }
         (*cnt)++;
-
         return;
     }
 
     grid[i][j] = -1;
 
-    dfs(orig, grid, gridSize, gridColSize, i-1, j, cnt);
-    dfs(orig, grid, gridSize, gridColSize, i, j-1, cnt);
-    dfs(orig, grid, gridSize, gridColSize, i+1, j, cnt);
-    dfs(orig, grid, gridSize, gridColSize, i, j+1, cnt);
+    dfs(grid, gridSize, gridColSize, i-1, j, cnt);
+    dfs(grid, gridSize, gridColSize, i, j-1, cnt);
+    dfs(grid, gridSize, gridColSize, i+1, j, cnt);
+    dfs(grid, gridSize, gridColSize, i, j+1, cnt);
     
     grid[i][j] = 0;
 }
 
 int uniquePathsIII(int** grid, int gridSize, int* gridColSize){
-    int **grid_copy = calloc(gridSize, sizeof(int*));
-    for (int i = 0; i < gridSize; i++) {
-        grid_copy[i] = calloc(gridColSize[0], sizeof(int));
-    }
-    
-    for (int i = 0; i < gridSize; i++) {
-        for (int j = 0; j < gridColSize[0]; j++) {   
-            grid_copy[i][j] = grid[i][j];
-        }
-    }
-    
     int result = 0;
     for (int i = 0; i < gridSize; i++) {
         for (int j = 0; j < gridColSize[0]; j++) {
             if (grid[i][j] == 1) {
-                dfs(grid, grid_copy, gridSize, gridColSize, i, j, &result);
+                dfs(grid, gridSize, gridColSize, i, j, &result);
                 return result;
             }       
         }
