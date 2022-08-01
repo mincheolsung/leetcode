@@ -1,13 +1,12 @@
 
 
 int uniquePaths(int m, int n) {
+    int i,j;
     int **dp = calloc(m, sizeof(int*));
     if (dp == NULL) {
         return 0;
     }
-    
-    int i,j;
-    
+
     for (i = 0; i < m; i++) {
         dp[i] = calloc(n, sizeof(int));
         if (dp[i] == NULL) {
