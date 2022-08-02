@@ -12,7 +12,7 @@ int kthSmallest(int** matrix, int matrixSize, int* matrixColSize, int k) {
                 if (matrix[i][0] > mid) {
                     continue;
                 }
-                
+    
                 if (matrix[i][j] <= mid) {
                     cnt++;
                 }
