@@ -7,14 +7,18 @@ int kthSmallest(int** matrix, int matrixSize, int* matrixColSize, int k) {
     while (left < right) {
         mid = left + (right-left)/2;
         cnt = 0;
-        j = matrixSize - 1;
         for (i = 0; i < matrixSize; i++) {
-            while (j >= 0 && matrix[i][j] > mid) {
-                j--;
+            for (j = 0; j < matrixSize; j++) {
+                if (matrix[i][0] > mid) {
+                    continue;
+                }
+                
+                if (matrix[i][j] <= mid) {
+                    cnt++;
+                }
             }
-            cnt += j + 1;
         }
-        
+
         if (cnt < k) {
             left = mid + 1;
         } else {
