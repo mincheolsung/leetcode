@@ -22,5 +22,5 @@ int kthSmallest(int** matrix, int matrixSize, int* matrixColSize, int k) {
         }
     }
 
-    return right;
+    return left;
 }
