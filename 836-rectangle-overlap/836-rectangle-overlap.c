@@ -1,13 +1,3 @@
-/*
-    (x1 y2)   (x2 y2)
-    
-    (x1 y1)   (x2 y1)
-*/
-
-#define min(a,b) (a<b?a:b)
-#define max(a,b) (a>b?a:b)
-
-
 bool isRectangleOverlap(int* rec1, int rec1Size, int* rec2, int rec2Size){
     int *p1;
     int *p2;
