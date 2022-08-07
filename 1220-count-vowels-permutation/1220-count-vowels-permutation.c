@@ -1,8 +1,8 @@
-#define _a 0
-#define _e 1
-#define _i 2
-#define _o 3
-#define _u 4
+#define a 0
+#define e 1
+#define i 2
+#define o 3
+#define u 4
 #define MOD(a) ((a)%1000000007ULL)
 
 unsigned long long countVowelPermutation(int n) {
@@ -15,12 +15,12 @@ unsigned long long countVowelPermutation(int n) {
     }
 
     for (idx = 2; idx <= n; idx++) {     
-        dp[_a][idx] = MOD(dp[_e][idx-1] + dp[_i][idx-1] + dp[_u][idx-1]);
-        dp[_e][idx] = MOD(dp[_a][idx-1] + dp[_i][idx-1]);   
-        dp[_i][idx] = MOD(dp[_e][idx-1] + dp[_o][idx-1]);   
-        dp[_o][idx] = MOD(dp[_i][idx-1]);   
-        dp[_u][idx] = MOD(dp[_i][idx-1] + dp[_o][idx-1]);
+        dp[a][idx] = MOD(dp[e][idx-1] + dp[i][idx-1] + dp[u][idx-1]);
+        dp[e][idx] = MOD(dp[a][idx-1] + dp[i][idx-1]);   
+        dp[i][idx] = MOD(dp[e][idx-1] + dp[o][idx-1]);   
+        dp[o][idx] = MOD(dp[i][idx-1]);   
+        dp[u][idx] = MOD(dp[i][idx-1] + dp[o][idx-1]);
     }
 
-    return (int)MOD(dp[_a][n] + dp[_e][n] + dp[_i][n] + dp[_o][n] + dp[_u][n]);;
+    return (int)MOD(dp[a][n] + dp[e][n] + dp[i][n] + dp[o][n] + dp[u][n]);;
 }
