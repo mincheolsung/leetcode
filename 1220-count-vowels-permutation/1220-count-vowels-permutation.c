@@ -5,7 +5,7 @@
 #define u 4
 #define MOD(a) ((a)%1000000007ULL)
 
-unsigned long long countVowelPermutation(int n) {
+int countVowelPermutation(int n) {
     int idx;
     unsigned long long *dp[5];
 
