@@ -6,8 +6,7 @@
 #define MOD(a) ((a)%1000000007ULL)
 
 unsigned long long countVowelPermutation(int n) {
-    int idx;    
-    int result;
+    int idx;
     unsigned long long *dp[5];
 
     for (idx = 0; idx < 5; idx++) {
@@ -23,6 +22,5 @@ unsigned long long countVowelPermutation(int n) {
         dp[_u][idx] = MOD(dp[_i][idx-1] + dp[_o][idx-1]);
     }
 
-    result = (int)MOD(dp[_a][n] + dp[_e][n] + dp[_i][n] + dp[_o][n] + dp[_u][n]);
-    return result;
+    return (int)MOD(dp[_a][n] + dp[_e][n] + dp[_i][n] + dp[_o][n] + dp[_u][n]);;
 }
