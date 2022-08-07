@@ -22,5 +22,5 @@ int countVowelPermutation(int n) {
         dp[u][idx] = MOD(dp[i][idx-1] + dp[o][idx-1]);
     }
 
-    return (int)MOD(dp[a][n] + dp[e][n] + dp[i][n] + dp[o][n] + dp[u][n]);;
+    return (int)MOD(dp[a][n] + dp[e][n] + dp[i][n] + dp[o][n] + dp[u][n]);
 }
