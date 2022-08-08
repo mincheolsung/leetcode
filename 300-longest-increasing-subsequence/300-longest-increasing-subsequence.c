@@ -2,11 +2,11 @@
 #define min(a,b) (a<b?a:b)
 
 int lengthOfLIS(int* nums, int n){
-    short i,j;
+    int i,j;
     int max_lis;
-    short *lis;
+    int *lis;
     
-    lis = malloc(n*sizeof(short));
+    lis = malloc(n*sizeof(int));
     if (lis == NULL) {
         return 0;
     }
