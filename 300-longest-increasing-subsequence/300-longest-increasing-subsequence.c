@@ -51,25 +51,6 @@ int lengthOfLIS(int* nums, int n) {
     return result;
 }
 */
-void replace(int*sub, int len, int target) {
-    if (len == 1) {
-        if (target <= sub[0]) {
-            sub[0] = target;
-            return;
-        }
-    }
-
-    for (int i = 0; i < len-1; i++) {
-        if (sub[i] == target) {
-            return;
-        }
-
-        if (sub[i] < target && target <= sub[i+1]) {
-            sub[i+1] = target;
-            return;
-        }
-    }
-}
 
 int lengthOfLIS(int* nums, int n) {
     int sub[n];
