@@ -34,22 +34,22 @@ bool isValidSudoku(char** board, int boardSize, int* boardColSize){
         if (!is_valid(temp)) {
             return false;
         }
-    }
-    
-    /* check a sub-box */
-    for (i = 0; i < 9; i+= 3) {
-        for (j = 0; j < 9; j+= 3) {
-            k = 0;
-            h = 0;
-            index = 0;
-            while (index < 9) {
-                temp[index++] = board[i+k][j+h];
-                k++;
-                h += k/3;
-                k %= 3;
-            }
-            if (!is_valid(temp)) {
-                return false;
+        
+        /* check a sub-box */
+        if ((i%3) == 0) {
+            for (j = 0; j < 9; j+= 3) {
+                k = 0;
+                h = 0;
+                index = 0;
+                while (index < 9) {
+                    temp[index++] = board[i+k][j+h];
+                    k++;
+                    h += k/3;
+                    k %= 3;
+                }
+                if (!is_valid(temp)) {
+                    return false;
+                }
             }
         }
     }
