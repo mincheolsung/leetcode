@@ -64,11 +64,22 @@ int lengthOfLIS(int* nums, int n) {
             sub[len] = nums[i];
             len++;
         } else {
-            int k = 0;
-            while (sub[k] < nums[i]) {
-                k++;
+            int left = 0;
+            int right = len-1;
+            while (left < right) {
+                int mid = left + (right - left)/2;
+                if (nums[i] == sub[mid]) {
+                    goto out;
+                }
+                if (nums[i] < sub[mid]) {
+                    right = mid;
+                } else {
+                    left = mid+1;
+                }
             }
-            sub[k] = nums[i];
+            sub[left] = nums[i];
+out:
+            ;
         }
     }
 
