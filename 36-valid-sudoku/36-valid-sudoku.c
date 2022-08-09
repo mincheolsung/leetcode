@@ -20,19 +20,21 @@ bool isValidSudoku(char** board, int boardSize, int* boardColSize){
     int index;
     char temp[9];
 
-    for (i = 0; i < 9; i++) {
-        /* check a row */
-        if (!is_valid(board[i])) {
-            return false;
+    for (i = 0; i < 9; i++) {    
+        { /* check a row */
+            if (!is_valid(board[i])) {
+                return false;
+            }
         }
         
-        /* check a col */
-        index = 0;
-        for (j = 0; j < 9; j++) {
-             temp[index++] = board[j][i];   
-        }
-        if (!is_valid(temp)) {
-            return false;
+        { /* check a col */
+            index = 0;
+            for (j = 0; j < 9; j++) {
+                 temp[index++] = board[j][i];   
+            }
+            if (!is_valid(temp)) {
+                return false;
+            }
         }
         
         /* check a sub-box */
