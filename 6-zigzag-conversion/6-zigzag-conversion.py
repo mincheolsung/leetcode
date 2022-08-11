@@ -9,9 +9,8 @@ class Solution(object):
         if numRows == 1:
             return s
         
-        pattern = [["0" for i in xrange(len(s))] for i in xrange(numRows)]
-        
-        
+        pattern = [["0" for i in range(len(s))] for i in range(numRows)]
+
         r = -1
         c = 0
         i = 0
