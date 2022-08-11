@@ -5,17 +5,14 @@ class Solution(object):
         :rtype: List[int]
         """
         
-        temp1 = [1]*len(nums)
-        temp2 = [1]*len(nums)
+        result = [1]*len(nums)
         
         for i in range(1, len(nums)):
-            temp1[i] = nums[i-1] * temp1[i-1]
+            result[i] = nums[i-1] * result[i-1]
             
+        temp = 1
         for i in range(len(nums)-2, -1, -1):
-            temp2[i] = nums[i+1] * temp2[i+1]
+            temp = nums[i+1] * temp
+            result[i] *= temp
             
-        for i in range(len(nums)):
-            temp1[i] *= temp2[i]
-            
-            
-        return temp1
+        return result
