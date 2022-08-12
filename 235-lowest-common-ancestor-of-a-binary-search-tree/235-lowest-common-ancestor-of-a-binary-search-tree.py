@@ -17,15 +17,15 @@ class Solution(object):
         if p.val > q.val:
             p,q = q,p
         
-        if p.val <= root.val and root.val <= q.val:
-            return root
+        cur = root
+        while True:
+            if p.val <= cur.val and cur.val <= q.val:
+                return cur
+            elif p.val < cur.val and q.val < cur.val:
+                cur = cur.left
+            elif p.val > cur.val and q.val > cur.val:
+                cur = cur.right
         
-        if p.val < root.val and q.val < root.val:
-            return self.lowestCommonAncestor(root.left, p, q)
-        
-        if root.val < p.val and root.val < q.val:
-            return self.lowestCommonAncestor(root.right, p, q)
-            
-        
+
         
         
