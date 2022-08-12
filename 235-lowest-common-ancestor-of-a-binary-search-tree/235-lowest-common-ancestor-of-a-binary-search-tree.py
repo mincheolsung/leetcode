@@ -14,9 +14,6 @@ class Solution(object):
         :rtype: TreeNode
         """
 
-        if root is None:
-            return None
-
         if p.val > q.val:
             p,q = q,p
         
