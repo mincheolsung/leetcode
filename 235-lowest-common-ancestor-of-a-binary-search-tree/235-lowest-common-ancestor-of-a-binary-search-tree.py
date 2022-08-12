@@ -23,7 +23,7 @@ class Solution(object):
         if p.val < root.val and q.val < root.val:
             return self.lowestCommonAncestor(root.left, p, q)
         
-        if root.val < p and root.val < q.val:
+        if root.val < p.val and root.val < q.val:
             return self.lowestCommonAncestor(root.right, p, q)
             
         
