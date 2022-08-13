@@ -1,31 +1,31 @@
-class Solution:
-    def findSubstring(self, s: str, words: List[str]) -> List[int]:
-        n = len(s)
-        k = len(words)
-        word_length = len(words[0])
-        substring_size = word_length * k
-        word_count = collections.Counter(words)
-        
-        def check(i):
-            # Copy the original dictionary to use for this index
-            remaining = word_count.copy()
-            words_used = 0
-            
-            # Each iteration will check for a match in words
-            for j in range(i, i + substring_size, word_length):
-                sub = s[j : j + word_length]
-                if remaining[sub] > 0:
-                    remaining[sub] -= 1
-                    words_used += 1
-                else:
-                    break
-            
-            # Valid if we used all the words
-            return words_used == k
-        
-        answer = []
-        for i in range(n - substring_size + 1):
-            if check(i):
-                answer.append(i)
+class Solution(object):
+    def findSubstring(self, s, words):
+        """
+        :type s: str
+        :type words: List[str]
+        :rtype: List[int]
+        """
 
-        return answer
+        len_of_word = len(words[0])
+        num_of_word = len(words)
+        len_of_words = len_of_word * num_of_word
+        
+        def compare(s, words):
+            temp = []
+            for i in range(0, len_of_words, len_of_word):
+                temp.append(s[i:i+len_of_word])
+    
+            temp.sort()
+            words.sort()
+
+            if temp == words:
+                return True;
+            else:
+                return False;
+
+        result = []
+        for i in range(0, len(s)):
+            if compare(s[i:], words):
+                result.append(i)
+
+        return result
