@@ -17,9 +17,6 @@ class Solution(object):
     
             temp.sort()
             words.sort()
-            
-            #a = "".join(temp)
-            #b = "".join(words)
 
             if temp == words:
                 return True;
