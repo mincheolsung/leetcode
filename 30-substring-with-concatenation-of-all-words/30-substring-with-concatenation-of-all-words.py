@@ -25,8 +25,8 @@ class Solution(object):
 
         result = []
         for i in range(0, len(s)):
-            if compare(s[i:i+len_of_words], words):
+            if compare(s[i:], words):
                 result.append(i)
-                
+
         return result
         
