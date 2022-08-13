@@ -18,10 +18,10 @@ class Solution(object):
             temp.sort()
             words.sort()
             
-            a = "".join(temp)
-            b = "".join(words)
+            #a = "".join(temp)
+            #b = "".join(words)
 
-            if a == b:
+            if temp == words:
                 return True;
             else:
                 return False;
