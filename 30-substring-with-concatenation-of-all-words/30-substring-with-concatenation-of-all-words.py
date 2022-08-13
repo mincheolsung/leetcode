@@ -6,28 +6,29 @@ class Solution(object):
         :rtype: List[int]
         """
 
-        lenWords = len(words[0]) * len(words)
+        len_of_word = len(words[0])
+        num_of_word = len(words)
+        len_of_words = len_of_word * num_of_word
         
         def compare(s, words):
             temp = []
-            for _ in range(len(words)):
-                temp.append(s[:len(words[0])])
-                s = s[len(words[0]):]
-            
+            for i in range(0, len_of_words, len_of_word):
+                temp.append(s[i:i+len_of_word])
+    
             temp.sort()
             words.sort()
             
             a = "".join(temp)
             b = "".join(words)
-            
+
             if a == b:
                 return True;
             else:
                 return False;
-                
+
         result = []
         for i in range(0, len(s)):
-            if compare(s[i:i+lenWords], words):
+            if compare(s[i:i+len_of_words], words):
                 result.append(i)
                 
         return result
