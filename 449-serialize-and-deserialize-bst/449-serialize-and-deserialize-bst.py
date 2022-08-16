@@ -30,19 +30,28 @@ class Codec:
         :type data: str
         :rtype: TreeNode
         """
-        vals = collections.deque(int(val) for val in data.split())
+        vals = [int(val) for val in data.split()]
         
-        def bst(minVal, maxVal):
-            if vals and minVal < vals[0] < maxVal:
-                val = vals.popleft()
-                root = TreeNode(val)
-                root.left = bst(minVal, val)
-                root.right = bst(val, maxVal)
-                return root
+        def bst(vals):
+            if not vals:
+                return None
 
-        return bst(float('-infinity'), float('infinity'))            
+            val = vals[0]
+            node = TreeNode(val)
+            
+            i = 1
+            while i < len(vals) and vals[i] < val:
+                i+=1
+                
+            node.left = bst(vals[1:i])
+            node.right = bst(vals[i:])
+            
+            return node
+            
+        return bst(vals)            
         
 
+        
 # Your Codec object will be instantiated and called as such:
 # ser = Codec()
 # deser = Codec()
