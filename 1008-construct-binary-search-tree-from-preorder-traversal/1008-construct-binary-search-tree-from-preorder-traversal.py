@@ -10,14 +10,19 @@ class Solution(object):
         :type preorder: List[int]
         :rtype: TreeNode
         """
-        vals = collections.deque(preorder)
         
-        def bst(minVal, maxVal):
-            if vals and minVal < vals[0] < maxVal:
-                val = vals.popleft()
-                root = TreeNode(val)
-                root.left = bst(minVal, val)
-                root.right = bst(val, maxVal)
-                return root
+        if not preorder:
+            return None
         
-        return bst(float("-infinity"), float("infinity"))
+        node = TreeNode(preorder[0])
+        index = 1
+        
+        while index < len(preorder) and preorder[index] < node.val:
+            index+=1
+        
+        node.left = self.bstFromPreorder(preorder[1:index])
+        node.right = self.bstFromPreorder(preorder[index:])
+        
+        return node
+
+                
