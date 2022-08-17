@@ -5,22 +5,18 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         
-        result = []
+        result = [] 
+        q = deque()
+        q.append([0])
         
-        if not graph:
-            return result
-
-        def dfs(temp, start):
-            if temp[-1] == len(graph)-1:
-                result.append(temp[:])
-                
-            for node in graph[start]:
-                temp.append(node)
-                dfs(temp, node)
-                temp.pop()
-                
-        dfs([0], 0)        
-        
+        while q:
+            path = q.popleft()
+            if path[-1] == len(graph)-1:
+                result.append(path)
+            else:
+                for node in graph[path[-1]]:
+                    q.append(path + [node])
+    
         return result
                 
                 
