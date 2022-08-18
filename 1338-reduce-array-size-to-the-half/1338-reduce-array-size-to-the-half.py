@@ -20,5 +20,3 @@ class Solution(object):
             else:
                 result+=1
                 return result
-
-        return result
