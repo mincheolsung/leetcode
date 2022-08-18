@@ -13,7 +13,7 @@ class Solution(object):
         if not root:
             return []
 
-        traversal = collections.deque()
+        traversal = []
         length = 1
         global len_left
         len_left = 101
