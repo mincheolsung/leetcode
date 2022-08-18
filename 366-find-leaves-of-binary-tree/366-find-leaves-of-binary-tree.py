@@ -36,6 +36,5 @@ class Solution(object):
         while True:
             if helper(root, index):
                 return result
-            print(result)
             index+=1
             
