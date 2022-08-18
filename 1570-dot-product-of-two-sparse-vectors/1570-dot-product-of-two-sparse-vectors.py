@@ -15,9 +15,14 @@ class SparseVector:
         :rtype: int
         """
         ans = 0
-        items = self.myMap.items()
+        if len(self.myMap) < len(vec.myMap):
+            map1, map2 = self.myMap, vec.myMap
+        else:
+            map2, map1 = self.myMap, vec.myMap
+        
+        items = map1.items()
         for i, value in items:
-            ans += value * vec.myMap[i]
+            ans += value * map2[i]
             
         return ans
 
