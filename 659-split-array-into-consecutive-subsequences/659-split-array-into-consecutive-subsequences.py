@@ -1,10 +1,13 @@
 class Solution(object):
-    def isPossible(self, A):
-        left = collections.Counter(A)
+    def isPossible(self, nums):
+        left = collections.Counter(nums)
         end = collections.Counter()
-        for i in A:
-            if not left[i]: continue
+        for i in nums:
+            if not left[i]: 
+                continue
+                
             left[i] -= 1
+            
             if end[i - 1] > 0:
                 end[i - 1] -= 1
                 end[i] += 1
@@ -14,4 +17,5 @@ class Solution(object):
                 end[i + 2] += 1
             else:
                 return False
+
         return True
