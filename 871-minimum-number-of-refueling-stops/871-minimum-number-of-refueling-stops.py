@@ -7,5 +7,6 @@ class Solution(object):
                     dp[t+1] = max(dp[t+1], dp[t] + capacity)
 
         for i, d in enumerate(dp):
-            if d >= target: return i
+            if d >= target:
+                return i
         return -1
