@@ -4,6 +4,11 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        return n > 0 and log(n,2) % 2 == 0
+        
+        if n > 0:
+            temp = log(n,4)
+            return (temp == int(temp))
+        
+        return False
         
         
