@@ -3,7 +3,7 @@ class Solution:
         cnt = Counter(str(n))
 
         target = 1        
-        while target < 1000000000:
+        while target < 1e9:
             target_cnt = Counter(str(target))
             if target_cnt == cnt:
                 return True
