@@ -8,7 +8,7 @@ class Solution:
             
             if currentSum <= 0:
                 currentSum = 0
-            elif currentSum > result:
-                result = currentSum
+            
+            result = max(result, currentSum)
                 
         return result if result != 0 else max(nums)
