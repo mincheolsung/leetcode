@@ -11,5 +11,4 @@ class Solution:
             elif currentSum > result:
                 result = currentSum
                 
-        print(result)
         return result if result != 0 else max(nums)
