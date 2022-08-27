@@ -44,15 +44,15 @@ class Solution:
 
                 # find the largest sum of a subarray which is no more than K
                 import bisect
-                cum_sum = [0]
-                cum, max_sum = 0, float('-inf')
+                sortedSet = [0]
+                currentSum, maxSum = 0, float('-inf')
                 for item in sums:
-                    cum += item
-                    left = bisect.bisect_left(cum_sum, cum - k)
-                    if left < len(cum_sum):
-                        max_sum = max(max_sum, cum - cum_sum[left])
-                    bisect.insort(cum_sum, cum)
+                    currentSum += item
+                    left = bisect.bisect_left(sortedSet, currentSum - k)
+                    if left < len(sortedSet):
+                        maxSum = max(maxSum, currentSum - sortedSet[left])
+                    bisect.insort(sortedSet, currentSum)
 
-                res = max(res, max_sum)
+                res = max(res, maxSum)
 
         return res
