@@ -10,5 +10,8 @@ class Solution:
                 currentSum = 0
             
             result = max(result, currentSum)
-                
-        return result if result != 0 else max(nums)
+             
+        if result != 0:
+            return result
+        else:
+            return max(nums)
