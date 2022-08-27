@@ -32,7 +32,8 @@ class Solution:
             
         return result
         '''
-        if not matrix:  return 0
+        if not matrix:
+            return 0
         
         res = float('-inf')
         rows, columns = len(matrix), len(matrix[0])
@@ -43,7 +44,6 @@ class Solution:
                     sums[r] += matrix[r][j]
 
                 # find the largest sum of a subarray which is no more than K
-                import bisect
                 sortedSet = [0]
                 currentSum, maxSum = 0, float('-inf')
                 for item in sums:
