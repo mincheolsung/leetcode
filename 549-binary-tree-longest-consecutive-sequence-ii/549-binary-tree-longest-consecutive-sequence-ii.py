@@ -29,7 +29,7 @@ class Solution:
                 right = dfs(root.right)
                 if root.right.val + 1 == root.val:
                     ascending = max(ascending, right[0] + 1)
-                if root.right.val -1 == root.val:
+                if root.right.val - 1 == root.val:
                     descending = max(descending, right[1] + 1)
 
             maxRes = max(maxRes, ascending + descending - 1)
