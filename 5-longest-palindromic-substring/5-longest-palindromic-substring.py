@@ -11,11 +11,11 @@ class Solution:
         for i in range(len(s)):
             temp = lenPalindrome(s,i,i+1)
             if len(temp) > len(result):
-                result = temp[:]
+                result = temp
             
             temp = lenPalindrome(s,i,i)
             if len(temp) > len(result):
-                result = temp[:]
+                result = temp
             
         return result
             
