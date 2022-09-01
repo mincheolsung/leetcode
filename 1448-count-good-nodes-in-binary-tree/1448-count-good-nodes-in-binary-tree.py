@@ -23,9 +23,8 @@ class Solution:
             dfs(root.left, curMax)
             dfs(root.right, curMax)
             
-        
         dfs(root, float('-inf'))
-        
+
         return result
             
             
