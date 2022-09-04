@@ -9,7 +9,7 @@ class Solution:
         dict = defaultdict(list)
         result = []
     
-        def helper(root: Optional[TreeNode], i: int, j: int):
+        def dfs(root: Optional[TreeNode], i: int, j: int):
             if not root:
                 return
             
@@ -18,10 +18,10 @@ class Solution:
             else:
                 dict[(i,j)].append(root.val)
             
-            helper(root.left, i-1, j+1)
-            helper(root.right, i+1, j+1)
+            dfs(root.left, i-1, j+1)
+            dfs(root.right, i+1, j+1)
             
-        helper(root, 0, 0)
+        dfs(root, 0, 0)
         
         items = sorted(dict.items())
         (offset, _), _ = items[0]
