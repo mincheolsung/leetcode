@@ -3,11 +3,11 @@ class Solution:
         properties.sort(key=lambda x: (x[0], -x[1]))
 
         result = 0
-        max = 0
+        currentMax = 0
         for i in range(len(properties)-1, -1, -1):
-            if properties[i][1] < max:
+            if properties[i][1] < currentMax:
                 result+=1
             else:
-                max = properties[i][1]
+                currentMax = properties[i][1]
         
         return result
