@@ -1,16 +1,16 @@
 class Solution:
     def bagOfTokensScore(self, tokens: List[int], power: int) -> int:
         ans = 0
-        cur = 0
+        score = 0
         q = deque(sorted(tokens))
-        while q and (q[0] <= power or cur):
+        while q and (q[0] <= power or score):
             if q[0] <= power:
-                cur+=1
+                score+=1
                 power -= q.popleft()
             else:
-                cur-=1
+                score-=1
                 power += q.pop()
             
-            ans = max(ans, cur)
+            ans = max(ans, score)
             
         return ans
