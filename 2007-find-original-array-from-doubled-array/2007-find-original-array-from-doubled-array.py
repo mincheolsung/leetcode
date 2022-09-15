@@ -14,7 +14,7 @@ class Solution:
             if count[2*n] > 0:
                 original.append(n)
                 count[2*n] -= 1
-        
+
         if len(original)*2 == length: 
             return original
         else:
