@@ -2,10 +2,10 @@ class Solution:
     def lengthOfLongestSubstringTwoDistinct(self, s: str) -> int:
         answer = 0
         n = len(s)
-    
+
         if n <= 2:
             return n
-    
+
         dp = [0]*n
         for i in range(n-1):
             dp[i] = 1
