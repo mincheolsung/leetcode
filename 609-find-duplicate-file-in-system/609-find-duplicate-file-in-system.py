@@ -22,5 +22,3 @@ class Solution:
                 result.append(value)
 
         return result
-        
-            
