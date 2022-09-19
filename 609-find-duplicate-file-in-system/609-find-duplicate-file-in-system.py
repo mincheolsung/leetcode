@@ -16,6 +16,7 @@ class Solution:
                     dict[content].append(path+"/"+name)
                 else:
                     dict[content] = [path+"/"+name]
+
         for (key,value) in dict.items():
             if len(value) > 1:
                 result.append(value)
