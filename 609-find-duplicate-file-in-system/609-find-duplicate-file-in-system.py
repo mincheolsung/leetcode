@@ -20,5 +20,5 @@ class Solution:
         for (key,value) in dict.items():
             if len(value) > 1:
                 result.append(value)
-
+ 
         return result
