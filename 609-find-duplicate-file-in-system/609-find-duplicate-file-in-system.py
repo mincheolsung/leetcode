@@ -6,7 +6,6 @@ class Solution:
 
         dict = {}
         result = []
-
         for s in paths:
             s = deque(s.split())
             path = s.popleft()
