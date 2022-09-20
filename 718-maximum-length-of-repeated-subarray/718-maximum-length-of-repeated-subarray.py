@@ -12,4 +12,5 @@ class Solution:
                     else:
                         dp[i][j] = dp[i-1][j-1] + 1
                     result = max(result, dp[i][j])
+
         return result
