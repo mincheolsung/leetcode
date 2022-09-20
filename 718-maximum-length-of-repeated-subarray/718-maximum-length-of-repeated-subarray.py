@@ -11,4 +11,8 @@ class Solution:
                         dp[i][j] = 1
                     else:
                         dp[i][j] = dp[i-1][j-1] + 1
-        return max(max(row) for row in dp)
+
+                    if result < dp[i][j]:
+                            result = dp[i][j]
+
+        return result
