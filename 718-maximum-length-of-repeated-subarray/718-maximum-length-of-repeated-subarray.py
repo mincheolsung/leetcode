@@ -3,7 +3,6 @@ class Solution:
         n = len(nums1)
         m = len(nums2)
         dp = [[0]*m for _ in range(n)]
-
         result = 0
         for i in range(n):
             for j in range(m):
@@ -13,5 +12,4 @@ class Solution:
                     else:
                         dp[i][j] = dp[i-1][j-1] + 1
                     result = max(result, dp[i][j])
-
         return result
