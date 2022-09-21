@@ -1,31 +1,27 @@
 class Solution:
     def sumEvenAfterQueries(self, nums: List[int], queries: List[List[int]]) -> List[int]:
-        def isEven(num: int)-> bool:
-            return (num%2 == 0)
-
         n = len(queries)
         sum = 0
         for num in nums:
-            if isEven(num):
+            if num % 2 == 0:
                 sum+=num
         
         result = []
         
-        even = [True,True]
         for i in range(n):        
             val, index = queries[i]
             
-            even[0] = isEven(nums[index])
-            even[1] = isEven(nums[index]+val)
+            old = nums[index] 
+            new = old + val
             
-            if even[0] and even[1]:
+            if old % 2 == 0 and new % 2 == 0:
                 sum += val
-            elif even[0] and not even[1]:
+            elif old % 2 == 0 and new % 2 == 1:
                 sum -= nums[index]
-            elif not even[0] and even[1]:
+            elif old % 2 == 1 and new % 2 == 0:
                 sum += (nums[index]+val)
-                
-            nums[index] += val
+    
+            nums[index] = new
             result.append(sum)
     
         return result
