@@ -16,14 +16,12 @@ class Solution:
             val, index = queries[i]
             even[0] = isEven(nums[index])
             even[1] = isEven(nums[index]+val)
-            
             if even[0] and even[1]:
                 sum += val
             elif even[0] and not even[1]:
                 sum -= nums[index]
             elif not even[0] and even[1]:
                 sum += (nums[index]+val)
-
             nums[index] += val
             result.append(sum)
     
