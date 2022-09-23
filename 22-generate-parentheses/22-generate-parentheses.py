@@ -1,36 +1,20 @@
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
-        def isValid(s: str)->bool:
-            cnt = 0
-            for c in s:
-                if cnt < 0:
-                    return False
-
-                if c == "(":
-                    cnt+=1
-                else:
-                    cnt-=1
-                
-            if cnt != 0:
-                return False
-            else:
-                return True
-                        
-        def backtrack(n: int, s: str):
-            if n == 0:
-                if isValid(s):
-                    result.add(s)
-                    return
+        def backtrack(open: int, close: int):
+            if open == close == n:
+                result.append("".join(temp))
             
-            for i in range(len(s)+1):
-                #temp = s[:i] + "(" + s[i:] + ")"
-                #if temp not in result:
-                #    backtrack(n-1, temp)
-
-                temp = "(" + s[:i] + ")" + s[i:]
-                if temp not in result:
-                    backtrack(n-1, temp)
-        
-        result = set()
-        backtrack(n, "")
-        return list(result)
+            if open < n:
+                temp.append("(")
+                backtrack(open+1, close)
+                temp.pop()
+                
+            if close < open:
+                temp.append(")")
+                backtrack(open, close+1)
+                temp.pop()
+    
+        temp = []
+        result = []
+        backtrack(0,0)
+        return result
