@@ -23,7 +23,11 @@ class Solution:
                     return
             
             for i in range(len(s)+1):
-                temp = s[:i] + "(" + s[i:] + ")"
+                #temp = s[:i] + "(" + s[i:] + ")"
+                #if temp not in result:
+                #    backtrack(n-1, temp)
+
+                temp = "(" + s[:i] + ")" + s[i:]
                 if temp not in result:
                     backtrack(n-1, temp)
         
