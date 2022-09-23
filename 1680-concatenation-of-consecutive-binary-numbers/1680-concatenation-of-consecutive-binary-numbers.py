@@ -6,5 +6,5 @@ class Solution:
             result = result << swift
             result += num
             result %= 1000000007
-        
+
         return result
