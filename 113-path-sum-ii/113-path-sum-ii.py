@@ -16,12 +16,10 @@ class Solution:
         
         if root.left:
             for item in self.pathSum(root.left, targetSum - root.val):
-                item = [root.val] + item
-                res.append(item)
+                res.append([root.val] + item)
 
         if root.right:
             for item in self.pathSum(root.right, targetSum - root.val):
-                item = [root.val] + item
-                res.append(item)
+                res.append([root.val] + item)
 
         return res
