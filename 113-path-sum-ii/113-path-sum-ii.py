@@ -14,12 +14,10 @@ class Solution:
 
         res = []
         
-        if root.left:
-            for item in self.pathSum(root.left, targetSum - root.val):
-                res.append([root.val] + item)
+        for item in self.pathSum(root.left, targetSum - root.val):
+            res.append([root.val] + item)
 
-        if root.right:
-            for item in self.pathSum(root.right, targetSum - root.val):
-                res.append([root.val] + item)
+        for item in self.pathSum(root.right, targetSum - root.val):
+            res.append([root.val] + item)
 
         return res
