@@ -3,7 +3,7 @@ class Solution:
         n = len(d)
         r = [0]*n
         l = [0]*n
-        result = ["."]*n
+        result = [""]*n
 
         if d[0] == "R":
             r[0] = 1
