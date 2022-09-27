@@ -38,5 +38,5 @@ class Solution:
                 result[i] = 'R'
             elif r[i] > l[i]:
                 result[i] = 'L'
-                
+
         return "".join(result)
