@@ -10,7 +10,7 @@ class Solution:
         while cur:
             vals.append(cur.val)
             cur = cur.next
-            
+
         del vals[-n]
         if not vals:
             return None
