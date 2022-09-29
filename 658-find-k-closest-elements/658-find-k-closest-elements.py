@@ -5,18 +5,13 @@ class Solution:
         elif x >= arr[-1]:
             return arr[-k:]
 
-        diff = {}
-        for num in arr:
-            if abs(num-x) in diff:            
-                diff[abs(num-x)].append(num)
-            else:
-                diff[abs(num-x)] = [num]
+        diff = [[] for _ in range(20000)]
 
-        temp = sorted(diff.items())
-        
+        for num in arr:  
+            diff[abs(num-x)].append(num)
+
         result = []
-        for _,v in temp:
-            result += v
-        print(result)
+        for temp in diff:
+            result += temp
         return sorted(result[:k])
         
