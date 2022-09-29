@@ -12,10 +12,8 @@ class Solution:
 
         result = []
         for temp in diff:
-            n = len(temp)
-            if n > 0:
+            if temp:
                 result += temp
-            if n > k:
-                break
+
         return sorted(result[:k])
         
