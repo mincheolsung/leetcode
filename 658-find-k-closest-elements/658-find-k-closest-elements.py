@@ -5,15 +5,5 @@ class Solution:
         elif x >= arr[-1]:
             return arr[-k:]
 
-        diff = [[] for _ in range(20000)]
-
-        for num in arr:  
-            diff[abs(num-x)].append(num)
-
-        result = []
-        for temp in diff:
-            if temp:
-                result += temp
-
+        result = sorted(arr, key=lambda num:abs(x-num))
         return sorted(result[:k])
-        
