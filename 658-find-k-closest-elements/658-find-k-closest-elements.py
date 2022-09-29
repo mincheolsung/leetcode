@@ -12,6 +12,7 @@ class Solution:
 
         result = []
         for temp in diff:
-            result += temp
+            if temp:
+                result += temp
         return sorted(result[:k])
         
