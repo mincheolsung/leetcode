@@ -11,7 +11,6 @@ class Solution:
                 diff[abs(num-x)].append(num)
             else:
                 diff[abs(num-x)] = [num]
-                
 
         temp = sorted(diff.items())
         
