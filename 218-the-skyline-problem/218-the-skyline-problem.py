@@ -12,7 +12,7 @@ class Solution:
         for [x,h,r] in events:
             while maxHeight[0][1] <= x: # ditch stale max height
                 heappop(maxHeight)
-            
+
             if h: # update max height
                 heappush(maxHeight, [h,r])
 
