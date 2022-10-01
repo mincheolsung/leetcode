@@ -7,17 +7,16 @@ class Solution:
             events.append([r,0,0])
         events.sort()
         
-        
         result = [[0,0]]
-        live = [[0,float('inf')]] # h,r
+        maxHeight = [[0,float('inf')]] # h,r --> current maximum height
         for [x,h,r] in events:
-            while live[0][1] <= x:
-                heappop(live)
+            while maxHeight[0][1] <= x:
+                heappop(maxHeight)
             
-            if h:
-                heappush(live, [h,r])
+            if h: # update max height
+                heappush(maxHeight, [h,r])
 
-            if result[-1][1] != -live[0][0]:
-                result.append([x, -live[0][0]])
-                
+            if result[-1][1] != -maxHeight[0][0]: # if max height changes
+                result.append([x, -maxHeight[0][0]])
+
         return result[1:]
