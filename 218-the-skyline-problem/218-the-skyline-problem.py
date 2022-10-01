@@ -8,7 +8,7 @@ class Solution:
         events.sort()
         
         result = [[0,0]]
-        #maxHeight[0]: [current maxHeight, boundary]
+        #maxHeight[0]: [current maxHeight, boundary]; this maintains current max height
         maxHeight = [[0,float('inf')]]
         for [x,h,r] in events:
             while maxHeight[0][1] <= x: # pop out building which is end
