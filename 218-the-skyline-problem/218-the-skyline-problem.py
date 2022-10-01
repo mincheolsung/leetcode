@@ -8,7 +8,8 @@ class Solution:
         events.sort()
         
         result = [[0,0]]
-        maxHeight = [[0,float('inf')]] # h,r --> current maximum height
+        #maxHeight[0]: [current maxHeight, boundary]
+        maxHeight = [[0,float('inf')]]
         for [x,h,r] in events:
             while maxHeight[0][1] <= x: # ditch stale max height
                 heappop(maxHeight)
