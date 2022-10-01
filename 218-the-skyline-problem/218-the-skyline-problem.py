@@ -17,7 +17,7 @@ class Solution:
             if h: # if it is a start of a building, push it into maxHeight since its height can be potentially max height
                 heappush(maxHeight, [h,r])
 
-            if result[-1][1] != -maxHeight[0][0]: # if max height chanes from the previous key point
+            if result[-1][1] != -maxHeight[0][0]: # if max height chages from the previous key point
                 result.append([x, -maxHeight[0][0]])
 
         return result[1:]
