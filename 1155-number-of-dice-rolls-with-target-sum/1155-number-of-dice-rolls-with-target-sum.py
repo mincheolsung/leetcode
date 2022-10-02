@@ -8,9 +8,9 @@ class Solution:
         for i in range(1,n+1):
             for j in range(1, target+1):
                 for h in range(1, min(j,k)+1):
-                    dp[i][j] = (dp[i][j] + dp[i-1][j-h])%MOD
+                    dp[i][j] += dp[i-1][j-h]
 
-        return int(dp[n][target]%MOD)
+        return dp[n][target]%MOD
     
     
     
