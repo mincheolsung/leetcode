@@ -5,7 +5,7 @@ class Solution:
 
         if ppid[kill] == 0:
             return pid
-        
+
         def dfs(pid: int, path: List[int]):
             if pid == 0 or marked[pid] == 1:
                 for p in path:
