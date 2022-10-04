@@ -14,7 +14,7 @@ class Solution:
 
         if root.left and self.hasPathSum(root.left, targetSum - root.val):
             return True
-        
+
         if root.right and self.hasPathSum(root.right, targetSum - root.val):
             return True
 
