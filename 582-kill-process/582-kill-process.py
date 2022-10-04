@@ -25,5 +25,6 @@ class Solution:
         result = [kill]
         for p in pid:
             dfs(p, [])
- 
+
         return result
+    
