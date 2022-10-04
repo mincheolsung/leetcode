@@ -27,4 +27,3 @@ class Solution:
             dfs(p, [])
 
         return result
-    
