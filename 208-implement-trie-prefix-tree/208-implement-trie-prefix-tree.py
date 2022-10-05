@@ -1,34 +1,31 @@
 class TrieNode:
-    def __init__(self, val="", isEnd=0):
-        self.val = val
+    def __init__(self):
         self.children = defaultdict(TrieNode)
-        self.isEnd = isEnd
+        self.isWord = False
 
 class Trie:
     def __init__(self):
         self.root = TrieNode()
 
     def insert(self, word: str) -> None:
-        cur = self.root
-        for s in word:
-            cur = cur.children[s]
-            if cur.val != s:
-                cur.val = s
-        cur.isEnd = 1
+        node = self.root
+        for w in word:
+            node = node.children[w]
+        node.isWord = True
 
     def search(self, word: str) -> bool:
-        cur = self.root
-        for s in word:
-            cur = cur.children[s]
-            if cur.val != s:
+        node = self.root
+        for w in word:
+            node = node.children.get(w)
+            if not node:
                 return False
-        return cur.isEnd == 1
+        return node.isWord
 
     def startsWith(self, prefix: str) -> bool:
-        cur = self.root
-        for s in prefix:
-            cur = cur.children[s]
-            if cur.val != s:
+        node = self.root
+        for w in prefix:
+            node = node.children.get(w)
+            if not node:
                 return False
         return True
 
