@@ -6,19 +6,18 @@
 #         self.right = right
 class Solution:
     def findTarget(self, root: Optional[TreeNode], k: int) -> bool:
-        values = []
+        values = set()
         
         def travel(root: Optional[TreeNode]):
             if not root:
                 return
             
             travel(root.left)
-            values.append(root.val)
+            values.add(root.val)
             travel(root.right)
             
         travel(root)
-        
-        values = set(values)
+
         for value in list(values):
             values.remove(value)
             if k-value in values:
