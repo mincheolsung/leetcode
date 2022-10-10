@@ -4,9 +4,8 @@ class Solution:
         if n == 1:
             return ""
         
-        prefix = palindrome[:n//2]    
         i = 0
-        while i < n//2 and prefix[i] == 'a':
+        while i < n//2 and palindrome[i] == 'a':
             i+=1
         
         result = list(palindrome)
@@ -14,7 +13,7 @@ class Solution:
             result[n-1] = 'b'
         else:
             result[i] = 'a'
-            
+
         return ''.join(result)
             
             
