@@ -4,7 +4,6 @@ impl Solution {
         newNums.sort();
         let n = newNums.len();
         for i in (2..n).rev() {
-            println!("{}", i);
             if newNums[i] < newNums[i-1] + newNums[i-2] {
                 return newNums[i] + newNums[i-1] + newNums[i-2];
             }
