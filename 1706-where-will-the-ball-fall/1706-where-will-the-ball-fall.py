@@ -6,18 +6,15 @@ class Solution:
         def dfs(r: int, c: int) -> int:
             if r == m:
                 return c
-
             if c == -1 or c == n:
                 return -1
 
-            if grid[r][c] == 1 and c == n-1:
-                return -1
-            if grid[r][c] == 1 and grid[r][c+1] == -1:
-                return -1
-            if grid[r][c] == -1 and c == 0:
-                return -1
-            if grid[r][c] == -1 and grid[r][c-1] == 1:
-                return -1
+            if grid[r][c] == 1:
+                if c == n-1 or grid[r][c+1] == -1:
+                    return -1
+            else:
+                if c == 0 or grid[r][c-1] == 1:  
+                    return -1
             
             return dfs(r + 1, c + grid[r][c])
 
