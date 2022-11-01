@@ -19,5 +19,4 @@ class Solution:
         result = []
         for c in range(n):
             result.append(dfs(0,c))
-
         return result
