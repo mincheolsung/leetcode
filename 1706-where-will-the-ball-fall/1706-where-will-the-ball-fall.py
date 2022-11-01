@@ -6,8 +6,9 @@ class Solution:
         def dfs(r: int, c: int) -> int:
             if r == m:
                 return c
-            if c == -1 or c == n:
-                return -1
+
+            #if c == -1 or c == n:
+             #   return -1
 
             if grid[r][c] == 1:
                 if c == n-1 or grid[r][c+1] == -1:
