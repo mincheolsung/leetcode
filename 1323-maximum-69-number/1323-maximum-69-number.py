@@ -6,4 +6,4 @@ class Solution:
                 num += 3*div
                 break
             div //= 10
-        return num 
+        return num
