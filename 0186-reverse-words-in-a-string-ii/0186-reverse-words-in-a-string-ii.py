@@ -16,6 +16,6 @@ class Solution:
         while i < n:
             while i < n and s[i] != " ":
                 i+=1
-            myReverse(start,i-1)
+            myReverse(start, i-1)
             i+=1
             start = i
