@@ -8,9 +8,9 @@ class Solution:
                 s[left],s[right] = s[right],s[left]
                 left+=1
                 right-=1
-        
-        s.reverse()
+
         n = len(s)
+        myReverse(0,n-1)
         i = 0
         start = 0
         while i < n:
