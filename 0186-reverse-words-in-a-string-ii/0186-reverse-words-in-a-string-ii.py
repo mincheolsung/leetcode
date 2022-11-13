@@ -3,27 +3,23 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-
+        def myReverse(left: int, right: int):
+            while left < right:
+                s[left],s[right] = s[right],s[left]
+                left+=1
+                right-=1
+        
+        s.reverse()
         n = len(s)
-        end = n
+        i = 0
         start = 0
-        for i in range(n):
-            if s[i] == " ":
-                start = i
-
-        start += 1
-        s.append(" ")
-
-        while start > 0:
-            temp = end
-            while True:
-                c = s.pop(0)
-                s.insert(temp, c)
-                start -= 1
-                end -= 1
-                if c == " ":
-                    break
-        s.pop()
-        return s
+        while i < n:
+            while i < n and s[i] != " ":
+                i+=1
+            myReverse(start,i-1)
+            i+=1
+            start = i
+        
+        
                 
         
