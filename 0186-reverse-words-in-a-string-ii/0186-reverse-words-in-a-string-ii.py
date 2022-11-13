@@ -10,7 +10,7 @@ class Solution:
                 right-=1
 
         n = len(s)
-        myReverse(0,n-1)
+        myReverse(0, n-1)
         i = 0
         start = 0
         while i < n:
