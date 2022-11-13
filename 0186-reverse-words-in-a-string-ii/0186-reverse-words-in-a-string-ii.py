@@ -4,10 +4,6 @@ class Solution:
         Do not return anything, modify s in-place instead.
         """
 
-        def myInsert(c:str):
-            index = s.find("*")
-            s.insert(index, c)
-            
         n = len(s)
         end = n
         start = 0
