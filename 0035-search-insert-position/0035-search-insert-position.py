@@ -1,5 +1,6 @@
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
+        # bisect_right
         left = 0
         right = len(nums)
         
