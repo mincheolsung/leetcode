@@ -6,6 +6,7 @@ class Solution:
         while left < right:
             pivot = left + (right - left)//2
             
+            # bisect_right
             if pivot*pivot <= x:
                 left = pivot + 1
             else:
