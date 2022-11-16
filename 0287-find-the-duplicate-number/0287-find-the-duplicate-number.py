@@ -2,6 +2,7 @@ class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
         freq = 0
         for num in nums:
-            if freq & (1<<num):
+            target = 1 << num
+            if freq & target:
                 return num
-            freq |= (1 << num)  
+            freq |= target
