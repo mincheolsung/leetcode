@@ -19,4 +19,3 @@ class Solution:
                 low = pi+1
             else:
                 high = pi-1
-    
