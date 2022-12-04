@@ -6,12 +6,16 @@ class Solution:
         for i in range(n):
             presum[i+1] = nums[i]+presum[i]
         
-        average = [0]*n
-        
-        for i in range(n-1):
-            average[i] = abs(presum[i+1]//(i+1) - (presum[n]-presum[i+1])//(n-i-1))
+        minAverage = float('inf')
+        ans = 0
 
-        average[n-1] = presum[n]//n
-            
-        return average.index(min(average))
+        for i in range(n-1):
+            temp = abs(presum[i+1]//(i+1) - (presum[n]-presum[i+1])//(n-i-1))
+            if temp < minAverage:
+                minAverage = temp
+                ans = i
         
+        if presum[n]//n < minAverage:
+            return n-1
+        else:
+            return ans
