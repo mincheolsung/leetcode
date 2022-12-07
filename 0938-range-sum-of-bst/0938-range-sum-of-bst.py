@@ -13,9 +13,9 @@ class Solution:
             node = stack.pop()
             if low <= node.val <= high:
                 ans += node.val
-            if node.left:
+            if node.val > low and node.left:
                 stack.append(node.left)
-            if node.right:
+            if node.val < high and node.right:
                 stack.append(node.right)
-        
+
         return ans
