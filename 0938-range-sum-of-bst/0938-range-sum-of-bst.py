@@ -11,12 +11,8 @@ class Solution:
         ans = 0
         while stack:
             node = stack.pop()
-            if not node:
-                return ans
-            
             if low <= node.val <= high:
                 ans += node.val
-
             if node.left:
                 stack.append(node.left)
             if node.right:
