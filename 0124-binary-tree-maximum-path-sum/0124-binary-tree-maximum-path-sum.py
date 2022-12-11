@@ -14,10 +14,8 @@ class Solution:
 
             leftMax = helper(root.left)
             rightMax = helper(root.right)
-
             localMax = max([root.val, root.val + leftMax, root.val + rightMax])
             globalMax = max([globalMax, localMax, root.val + leftMax + rightMax])
-
             return localMax
 
         globalMax = float('-inf')
