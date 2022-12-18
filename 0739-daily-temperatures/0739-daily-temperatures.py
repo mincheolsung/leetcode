@@ -8,5 +8,4 @@ class Solution:
                 ans[index] = i-index
                 stack.pop()
             stack.append((i,temp))
-
         return ans
