@@ -13,4 +13,4 @@ class Solution:
                 temp -= sortedNums[j]
                 answer[i] -= 1
 
-        return answer 
+        return answer
