@@ -26,7 +26,6 @@ class Solution:
                     numSquare+=1
                 elif grid[x][y] == 1:
                     start = (x,y)
-        print(numSquare)
         dfs(start[0], start[1], [(start[0],start[1])])
 
         return ans
