@@ -2,10 +2,6 @@ class Solution:
     def minDeletionSize(self, strs: List[str]) -> int:
         m = len(strs)
         n = len(strs[0])
-        
-        #grid = []
-        #for i in range(m):
-            #grid.append(list(strs[i]))
 
         ans = 0
         for j in range(n):
