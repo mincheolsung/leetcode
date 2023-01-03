@@ -4,10 +4,9 @@ class Solution:
         n = len(strs[0])
         
         grid = []
-    
         for i in range(m):
             grid.append(list(strs[i]))
-                    
+
         ans = 0
         for j in range(n):
             for i in range(m-1):
