@@ -3,11 +3,10 @@ class Solution:
         m = len(strs)
         n = len(strs[0])
         
-        grid = [0]*m
+        grid = []
     
         for i in range(m):
-            for j in range(n):
-                grid[i] = list(strs[i])
+            grid.append(list(strs[i]))
                     
         ans = 0
         for j in range(n):
