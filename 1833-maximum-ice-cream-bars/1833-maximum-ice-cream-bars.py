@@ -6,5 +6,5 @@ class Solution:
         presum[0] = costs[0]
         for i in range(1, len(costs)):
             presum[i] = presum[i-1] + costs[i]
-            
+
         return bisect_right(presum, coins)
