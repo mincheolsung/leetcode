@@ -6,5 +6,4 @@ class Solution:
             maxDamage = max(maxDamage, damage[i])
             total += damage[i]
 
-        
         return total - (armor if maxDamage >= armor else maxDamage)
