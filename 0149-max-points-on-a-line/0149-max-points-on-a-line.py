@@ -3,10 +3,10 @@ class Solution:
         n = len(points)
         if n == 1:
             return 1
-        
+
         pairs = set()
         myMap = defaultdict(set)
-        
+
         for i in range(n):
             for j in range(n):
                 if i == j:
