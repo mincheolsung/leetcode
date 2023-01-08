@@ -8,9 +8,7 @@ class Solution:
 
         for i in range(n):
             for j in range(n):
-                if i == j:
-                    continue
-                if (j,i) not in pairs:
+                if i != j and (j,i) not in pairs:
                     pairs.add((i,j))
 
                     x1,y1 = points[i]
