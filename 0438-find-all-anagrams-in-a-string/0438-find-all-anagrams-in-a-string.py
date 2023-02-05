@@ -4,12 +4,15 @@ class Solution:
         _s = Counter([])
         n = len(p)
         ans = []
+        j = 0
         for i in range(len(s)):
+            j = i-n+1
             _s[s[i]]+=1
-            if i >= n:
-                _s[s[i-n]]-=1
-                
-            if i >= n-1:
-                if _p == _s:
-                    ans.append(i-n+1)
+
+            if j > 0:
+                _s[s[j-1]]-=1
+
+            if j >= 0 and _p == _s:
+                ans.append(j)
+
         return ans
